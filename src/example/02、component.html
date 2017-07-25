@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+
+<body>
+<div id="example">
+    <shiguoqing></shiguoqing>
+</div>
+
+</body>
+<script type="text/x-template" id="hello-world-template">
+    <p>Hello hello hello</p>
+</script>
+<script>
+    Vue.component('shiguoqing', {
+        template: '#hello-world-template'
+    })
+
+    const app = new Vue({
+        el:'#example'
+    })
+
+</script>
+</html>

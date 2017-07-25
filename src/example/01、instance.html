@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../node_modules/vue/dist/vue.js">
+</script>
+<body>
+vuedemo
+</body>
+<script>
+    var data = {a: 1}
+    const app = new Vue({
+        // 和数据相关的都挂载到data上
+        data: data,
+        // 和方法相关的都挂载到methods上
+        methods: {
+            // this和$的使用
+            func1: function () {
+                console.log(this.a);
+                console.log(this.$data.a);
+            },
+            changeData:function () {
+                this.a=2
+            }
+        }
+    })
+
+    // 先监听再改变
+    app.$watch('a', function (newVal, oldVal) {
+        console.log(newVal)
+        console.log(oldVal)
+    })
+    // 值改变之后会自动执行监听方法
+    app.a=3
+
+
+    // 动态属性和实例属性
+//    console.log(app)
+//    console.log(app.a)
+//    console.log(app.$data.a)
+
+
+</script>
+</html>
